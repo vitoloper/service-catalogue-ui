@@ -1,0 +1,17 @@
+﻿<div class="card mt-4">
+    <h4 class="card-header">Easy TV Service Catalogue</h4>
+    <div class="card-body">
+        <h6>List of services</h6>
+        <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+        <ul class="list-group" *ngIf="services">
+            <li class="list-group-item" *ngFor="let service of services">
+                Name: {{service.name}}<br>
+                Description: {{service.description}}<br>
+                Author: {{service.author || 'No author'}}<br>
+                Author image: <a href="{{apiUrl+service.author_image?.url}}">Click to see the image</a><br> 
+                Last update: {{service.last_update || 'No last update date'}}<br>
+                <button type="button" class="btn btn-primary" (click)="goToDetail(service.id)">Details</button>
+            </li>
+        </ul>
+    </div>
+</div>
