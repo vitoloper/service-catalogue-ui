@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
     <div class="navbar-nav">
         <a class="nav-item nav-link" routerLink="/">Home</a>
-        <a class="nav-item nav-link" (click)="logout()">Logout</a>
+        <a class="nav-item nav-link pull-right" (click)="logout()">Logout</a>
     </div>
 </nav>
 
@@ -11,8 +11,9 @@
     <router-outlet></router-outlet>
 </div>
 
-<!-- credits -->
-<div class="text-center mt-4">
-    <p>EasyTV Project</p>
-    <p>https://easytvproject.eu</p>
-</div>
+<footer class="footer">
+    <div class="container">
+        <img src="assets/images/logo_easytv_sintexto.png" width="50" height="20" />
+        <span class="text-muted">https://easytvproject.eu</span>
+    </div>
+</footer>

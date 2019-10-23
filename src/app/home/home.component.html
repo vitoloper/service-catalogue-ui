@@ -5,10 +5,10 @@
         <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
         <ul class="list-group" *ngIf="services">
             <li class="list-group-item" *ngFor="let service of services">
-                Name: {{service.name}}<br>
+                Name: <a [href]="service.frontend_uri" target="_blank">{{service.name}}</a><br>
                 Description: {{service.description}}<br>
                 Author: {{service.author || 'No author'}}<br>
-                Author image: <a href="{{apiUrl+service.author_image?.url}}">Click to see the image</a><br> 
+                Author image: <a [href]="apiUrl+service.author_image?.url">Click to see the image</a><br> 
                 Last update: {{service.last_update || 'No last update date'}}<br>
                 <button type="button" class="btn btn-primary" (click)="goToDetail(service.id)">Details</button>
             </li>
