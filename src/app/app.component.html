@@ -1,19 +1,59 @@
-﻿<!-- nav -->
-<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
-    <div class="navbar-nav">
-        <a class="nav-item nav-link" routerLink="/">Home</a>
-        <a class="nav-item nav-link pull-right" (click)="logout()">Logout</a>
+﻿<svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+
+        <symbol id="icon-list-cards" viewBox="0 0 21 21">
+            <path
+                d="M19.5 0h-18A1.5 1.5 0 000 1.5v18A1.5 1.5 0 001.5 21h18a1.5 1.5 0 001.5-1.5v-18A1.5 1.5 0 0019.5 0zm-.75 2.25v7.125h-7.125V2.25zm-9.375 0v7.125H2.25V2.25zM2.25 18.75v-7.125h7.125v7.125zm9.375 0v-7.125h7.125v7.125z" />
+        </symbol>
+
+        <symbol id="icon-list-rows" viewBox="0 0 21 17">
+            <path
+                d="M20.438 2.626A.563.563 0 0021 2.063v-1.5a.563.563 0 00-.562-.562H.563A.563.563 0 000 .563v1.5a.563.563 0 00.563.563zm0 7.5A.563.563 0 0021 9.563v-1.5a.563.563 0 00-.562-.562H.563A.563.563 0 000 8.063v1.5a.563.563 0 00.563.563zm0 7.5a.563.563 0 00.562-.563v-1.5a.563.563 0 00-.562-.562H.563a.563.563 0 00-.563.562v1.5a.563.563 0 00.563.563z" />
+        </symbol>
+
+    </defs>
+</svg>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 header__logo-row">
+                <a href="#" class="header__logo">
+                    <img src="assets/img/logo_easytv.png" alt="Easy TV" srcset="assets/img/logo_easytv@2x.png 2x" />
+                </a>
+                <span class="header__title"> SERVICE Catalogue</span>
+            </div>
+
+            <div class="col-12 col-md-6 header__user-row">
+
+                <div class="header__user dropdown">
+                    <a href="#" class="header__username dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <img src="assets/img/person.png" alt="Francis Drake" />
+                        Francis Drake
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#">Logout</a>
+                    </div>
+                    <!-- <a href="#" class="logout-btn button button--big">LOGOUT</a> -->
+                </div>
+            </div>
+            
+        </div>
     </div>
-</nav>
+</header>
 
 <!-- main app container -->
-<div class="container">
+<div class="mainbody">
     <router-outlet></router-outlet>
 </div>
 
+<!-- FOOTER -->
 <footer class="footer">
-    <div class="container">
-        <img src="assets/images/logo_easytv_sintexto.png" width="50" height="20" />
-        <span class="text-muted">https://easytvproject.eu</span>
-    </div>
+    <a href="http://easytvproject.eu/" class="footer__logo">
+        <img src="assets/img/logo_easytv.png" alt="Easy TV" srcset="assets/img/logo_easytv@2x.png 2x" />
+        http://easytvproject.eu/
+    </a>
 </footer>

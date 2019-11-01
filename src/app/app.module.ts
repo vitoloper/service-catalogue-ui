@@ -8,6 +8,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { appRoutingModule } from './app.routing';
+import { OwlModule } from 'ngx-owl-carousel';
 
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { HomeComponent } from './home';
@@ -19,7 +20,8 @@ import { DetailComponent } from './detail/detail.component'
         BrowserModule,
         ReactiveFormsModule,
         HttpClientModule,
-        appRoutingModule
+        appRoutingModule,
+        OwlModule
     ],
     declarations: [
         AppComponent,

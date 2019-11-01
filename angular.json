@@ -31,7 +31,10 @@
               "src/styles.less",
               "node_modules/swagger-ui/dist/swagger-ui.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/vendor/owl.carousel.min.js",
+              "./node_modules/owl.carousel/dist/owl.carousel.min.js"
+            ]
           },
           "configurations": {
             "production": {

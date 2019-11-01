@@ -20,8 +20,9 @@ export class LoginComponent implements OnInit {
         private authenticationService: AuthenticationService
     ) { 
         // redirect to home if already logged in
+        // NOTE: disabled because browsers get stuck even if the have invalid credentials stored
         if (this.authenticationService.currentUserValue) { 
-            this.router.navigate(['/']);
+            // this.router.navigate(['/']);
         }
     }
 
