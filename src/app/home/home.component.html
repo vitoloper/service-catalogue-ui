@@ -29,7 +29,7 @@
                             <div class="icard__date">{{(service.last_update | date: 'dd MMMM yyyy') || 'Date not available'}}</div>
                             <div class="icard__title"><a [href]="service.frontend_uri" target="_blank">{{service.name}}</a></div>
                             <div class="icard__abstract">
-                                {{service.description}}
+                                {{ (service.description?.length > 60)? (service.description | slice:0:60)+'...': (service.description) }}                              
                             </div>
 
                         </div>
