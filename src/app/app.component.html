@@ -16,7 +16,7 @@
 </svg>
 
 <!-- HEADER -->
-<header class="header">
+<header *ngIf="currentUser" class="header">
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-6 header__logo-row">
@@ -28,30 +28,29 @@
 
             <div class="col-12 col-md-6 header__user-row">
 
-                <div class="header__user dropdown">
+                <div *ngIf="currentUser" class="header__user dropdown">
                     <a href="#" class="header__username dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                        <img src="assets/img/person.png" alt="Francis Drake" />
-                        Francis Drake
+                        <!-- <img src="assets/img/person.png" alt="Francis Drake" /> -->
+                        {{currentUser.user.username}}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">Logout</a>
+                        <a class="dropdown-item" href="#" (click)="logout()">Logout</a>
                     </div>
-                    <!-- <a href="#" class="logout-btn button button--big">LOGOUT</a> -->
                 </div>
             </div>
-            
+
         </div>
     </div>
 </header>
 
 <!-- main app container -->
-<div class="mainbody">
+<div [ngClass]="currentUser ? 'mainbody' : '' ">
     <router-outlet></router-outlet>
 </div>
 
 <!-- FOOTER -->
-<footer class="footer">
+<footer *ngIf="currentUser" class="footer">
     <a href="http://easytvproject.eu/" class="footer__logo">
         <img src="assets/img/logo_easytv.png" alt="Easy TV" srcset="assets/img/logo_easytv@2x.png 2x" />
         http://easytvproject.eu/
