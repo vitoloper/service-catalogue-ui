@@ -1,8 +1,28 @@
-<div *ngIf="service">
-    <h1>{{service.name}}</h1>
-    <p>Description: {{service.description || 'No description'}}</p>
-    <p>Author: {{service.author || 'No author'}}</p>
-    <p>Last update: {{(service.last_update | date: 'dd MMMM yyyy')|| 'No last update date'}}</p>
-</div>
+<section class="container itemp__header">
+    <div *ngIf="service" class="row">
+        <div class="col-4 col-sm-3 col-md-2  itemp__profile">
+            <img src="assets/img/person-big.png" alt="Author image" />
+            <div class="itemp__role">Author</div>
+            <div class="itemp__name">{{service.author || 'No author'}}</div>
+        </div>
+        <div class="col-8 col-sm-9 col-md-10 col-lg-7 itemp__details">
+            <div class="itemp__date"> {{(service.last_update | date: 'dd MMMM yyyy')|| 'No last update date'}}</div>
+            <div class="itemp__title">{{service.name}}</div>
+            <div class="itemp__abstract">
+                {{service.description || 'No description'}}
+            </div>
+        </div>
+        <div class="col-12 col-lg-3 itemp__links ">
+            <div class="text-right">
+                <a class="view-more-services align-self-end" href="#">View more services <img
+                        src="assets/img/icon-cirle-arr.svg" alt="View more services" /></a>
+            </div>
+        </div>
+    </div>
+</section>
 
-<div class="swagger-container"></div>
+<section class="section-accordion bg-wht">
+    <div class="container">
+        <div class="swagger-container"></div>
+    </div>
+</section>
