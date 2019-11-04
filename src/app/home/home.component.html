@@ -2,9 +2,9 @@
     <div class="row">
         <div class="col-12 col-md-8">
             <div class="heading-text">
-                Short description text also on three lines lorem ipsum dolor sit amet, consectetur adipisici
-                elit,
-                sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
+                Welcome to the EasyTV Service Catalogue.<br>
+                Choose a service below by clicking on its title, or see more 
+                details by clicking on the "details" button.
             </div>
         </div>
     </div>
@@ -21,7 +21,7 @@
 
                     <div class="icard" *ngFor="let service of services">
                         <div class="icard__header">
-                            <img src="assets/img/person.png" alt="{{service.author}}" />
+                            <img src="{{apiUrl+service.author_image?.url}}" alt="{{service.author || 'No author'}}" />
                             <div class="icard__role">Author</div>
                             <div class="icard__name">{{service.author || 'Author not available'}}</div>
 

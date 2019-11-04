@@ -2,7 +2,7 @@
     <span *ngIf="!service" class="spinner-border spinner-border-sm mr-1"></span>
     <div *ngIf="service" class="row">
         <div class="col-4 col-sm-3 col-md-2  itemp__profile">
-            <img src="assets/img/person-big.png" alt="Author image" />
+            <img src="{{apiUrl+service.author_image?.url}}" alt="{{service.author || 'No author'}}" />
             <div class="itemp__role">Author</div>
             <div class="itemp__name">{{service.author || 'No author'}}</div>
         </div>
