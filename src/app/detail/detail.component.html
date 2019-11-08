@@ -7,7 +7,7 @@
             <div class="itemp__name">{{service.author || 'No author'}}</div>
         </div>
         <div class="col-8 col-sm-9 col-md-10 col-lg-7 itemp__details">
-            <div class="itemp__date"> {{(service.last_update | date: 'dd MMMM yyyy')|| 'No last update date'}}</div>
+            <div class="itemp__date">Last update<br>{{(service.last_update | date: 'dd MMMM yyyy')|| 'No last update date'}}</div>
             <div class="itemp__title">{{service.name}}</div>
             <div class="itemp__abstract">
                 {{service.description || 'No description'}}
